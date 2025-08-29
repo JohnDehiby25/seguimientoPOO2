@@ -15,12 +15,15 @@ public class AreaCalculator {
 
         Circle circle1 = new Circle(5);
 
-        Shape [] shapes = {rectangle1,circle1};
+        Triangle triangle1 = new Triangle(5, 4);
+
+        Shape [] shapes = {rectangle1,circle1, triangle1};
 
         double area = calculator.sum(shapes);
 
         System.out.printf("El area del rectangulo es: %.2f\n", rectangle1.getArea());
         System.out.printf("El area del circulo es: %.2f\n",circle1.getArea());
+        System.out.printf("El area del triangulo es: %.2f\n",triangle1.getArea());
         System.out.printf("La suma de areas es: %.2f\n", area );
 
 
