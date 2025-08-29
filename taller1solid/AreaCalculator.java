@@ -1,16 +1,9 @@
 public class AreaCalculator {
     
-    public double sum(Object[] shapes){
+    public double sum(Shape[] shapes){
         double totalArea = 0;
-        for(Object shape:shapes){
-            if(shape instanceof Rectangle){
-                Rectangle rectangle= (Rectangle) shape;
-                totalArea+=rectangle.getArea();
-            }
-            if(shape instanceof Circle){
-                Circle circle = (Circle) shape;
-                totalArea += circle.getArea();
-            }
+        for(Shape s: shapes){
+            totalArea += s.getArea();
         }
         return totalArea;
     }
@@ -18,15 +11,19 @@ public class AreaCalculator {
     public static void main(String[] args) {
         AreaCalculator calculator = new AreaCalculator();
 
-        Rectangle rectangle1 = new Rectangle(20, 5);
+        Rectangle rectangle1 = new Rectangle(5, 2);
 
-        Circle circle1= new Circle(10);
+        Circle circle1 = new Circle(5);
 
-        Object[] shapes ={rectangle1,circle1};
+        Shape [] shapes = {rectangle1,circle1};
 
-        double getArea = calculator.sum(shapes);
+        double area = calculator.sum(shapes);
 
-        System.out.println("El área total es: " + getArea);
+        System.out.printf("El area del rectangulo es: %.2f\n", rectangle1.getArea());
+        System.out.printf("El area del circulo es: %.2f\n",circle1.getArea());
+        System.out.printf("La suma de areas es: %.2f\n", area );
+
+
     }
     
 }
